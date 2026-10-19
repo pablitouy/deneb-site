@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deneb — Lightweight VPS control panel</title>
+  <meta name="description" content="Deneb is a free, open source control panel for your VPS: sites, Git deployments, databases, SSL, DNS and backups without running the panel as root." />
+  <meta name="theme-color" content="#0b0d1f" />
+  <meta property="og:title" content="Deneb — Lightweight VPS control panel" />
+  <meta property="og:description" content="Sites, Git deployments, databases, SSL, DNS and encrypted backups for your own VPS. Free and open source." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="brand" href="#top" aria-label="Deneb">
+      <img src="/favicon.svg" alt="" width="32" height="32" />
+      <span>Deneb</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#features" data-i18n="nav.features">Features</a>
+      <a href="#security" data-i18n="nav.security">Security</a>
+      <a href="#status" data-i18n="nav.status">Status</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="es" aria-pressed="false">ES</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <span class="pill"><span class="dot"></span><span data-i18n="hero.badge">In development · Free &amp; open source</span></span>
+      <h1 data-i18n="hero.title">Your VPS, under control.<br /><span class="grad">Without the bloat.</span></h1>
+      <p class="lead" data-i18n="hero.lead">Deneb is a lightweight control panel for your own server. Sites, Git deployments, databases, SSL, DNS and encrypted backups — from one clean interface, without running the panel as root.</p>
+
+      <form class="signup" id="signup" action="/subscribe.php" method="post" novalidate>
+        <label class="sr-only" for="email" data-i18n="form.label">Email address</label>
+        <input id="email" name="email" type="email" required autocomplete="email" maxlength="254" placeholder="you@example.com" data-i18n-placeholder="form.placeholder" />
+        <input class="hp" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <input type="hidden" name="lang" value="en" />
+        <button type="submit" data-i18n="form.button">Notify me at launch</button>
+      </form>
+      <p class="form-note" id="form-note" data-i18n="form.note" aria-live="polite">One email when Deneb is ready to install. No spam, no sharing.</p>
+
+      <div class="mock" aria-hidden="true">
+        <div class="mock-bar"><i></i><i></i><i></i><span>panel.example.com</span></div>
+        <div class="mock-body">
+          <aside class="mock-side">
+            <div class="mock-brand"><img src="/favicon.svg" alt="" width="22" height="22" /> Deneb</div>
+            <b class="on">Dashboard</b><b>Websites</b><b>Databases</b><b>SSL</b><b>DNS Zones</b><b>Backups</b><b>Cron Jobs</b>
+          </aside>
+          <div class="mock-main">
+            <div class="mock-stats">
+              <div><small>CPU</small><strong>12%</strong><em style="--w:12%"></em></div>
+              <div><small>Memory</small><strong>41%</strong><em style="--w:41%"></em></div>
+              <div><small>Disk</small><strong>28%</strong><em style="--w:28%"></em></div>
+            </div>
+            <div class="mock-sites">
+              <div><span class="ok"></span>app.example.com<code>Next.js · release #14</code></div>
+              <div><span class="ok"></span>api.example.com<code>Laravel · PHP 8.3</code></div>
+              <div><span class="ok"></span>blog.example.com<code>WordPress · SSL</code></div>
+              <div><span class="warn"></span>shop.example.com<code>Deploying…</code></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <h2 data-i18n="features.title">Everything a production server needs</h2>
+      <p class="sub" data-i18n="features.sub">Built around real deployments: marketing sites, Next.js frontends and Laravel APIs on the same VPS.</p>
+      <div class="grid">
+        <article class="card">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          <h3 data-i18n="f.sites.t">Sites &amp; runtimes</h3>
+          <p data-i18n="f.sites.d">Static, PHP (multiple versions per server) and Node.js sites with aliases, subdomains and isolated PHP-FPM pools per site.</p>
+        </article>
+        <article class="card">
+          <svg viewBox="0 0 24 24"><line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
+          <h3 data-i18n="f.git.t">Git deployments</h3>
+          <p data-i18n="f.git.d">Atomic releases with one-click rollback for Laravel and Node.js. Monorepos and private repositories supported.</p>
+        </article>
+        <article class="card">
+          <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>
+          <h3 data-i18n="f.db.t">Databases</h3>
+          <p data-i18n="f.db.d">MySQL, MariaDB and PostgreSQL with import, export and automatic safety backups before risky changes.</p>
+        </article>
+        <article class="card">
+          <svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+          <h3 data-i18n="f.ssl.t">Automatic SSL</h3>
+          <p data-i18n="f.ssl.d">Let's Encrypt certificates with a DNS preflight check before issuing, plus monitored renewals.</p>
+        </article>
+        <article class="card">
+          <svg viewBox="0 0 24 24"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg>
+          <h3 data-i18n="f.dns.t">Authoritative DNS</h3>
+          <p data-i18n="f.dns.d">Manage zones and records from the panel. New sites can publish their own DNS records automatically.</p>
+        </article>
+        <article class="card">
+          <svg viewBox="0 0 24 24"><rect width="20" height="5" x="2" y="3" rx="1"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"/><path d="M10 12h4"/></svg>
+          <h3 data-i18n="f.backup.t">Encrypted backups</h3>
+          <p data-i18n="f.backup.d">Scheduled full-site snapshots with checksums, encrypted copies to any S3-compatible storage and guided restore.</p>
+        </article>
+        <article class="card">
+          <svg viewBox="0 0 24 24"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>
+          <h3 data-i18n="f.laravel.t">Laravel ready</h3>
+          <p data-i18n="f.laravel.d">Queue workers, scheduler, environment vault and log viewer — managed per site, refreshed on every deploy.</p>
+        </article>
+        <article class="card">
+          <svg viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <h3 data-i18n="f.files.t">Files, SFTP &amp; cron</h3>
+          <p data-i18n="f.files.d">Built-in file manager, isolated SFTP accounts per site that work with FileZilla, and scheduled tasks.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section split" id="security">
+      <div>
+        <h2 data-i18n="sec.title">Secure by design</h2>
+        <p class="sub left" data-i18n="sec.sub">A control panel holds the keys to your server. Deneb is built so a bug in the web interface can't become root access.</p>
+      </div>
+      <ul class="checks">
+        <li><b data-i18n="sec.1.t">No root daemon.</b> <span data-i18n="sec.1.d">The panel runs as a restricted account; privileged work goes through small, allow-listed helpers.</span></li>
+        <li><b data-i18n="sec.2.t">Encrypted secrets.</b> <span data-i18n="sec.2.d">Environment variables, Git tokens and storage keys are encrypted at rest and never shown again.</span></li>
+        <li><b data-i18n="sec.3.t">Safe updates.</b> <span data-i18n="sec.3.d">Updates are built and tested before switching, with automatic rollback if the panel doesn't come back healthy.</span></li>
+        <li><b data-i18n="sec.4.t">Isolated sites.</b> <span data-i18n="sec.4.d">Each site gets its own PHP identity, temporary directories and SFTP jail.</span></li>
+      </ul>
+    </section>
+
+    <section class="section" id="status">
+      <h2 data-i18n="status.title">Where Deneb is today</h2>
+      <p class="sub" data-i18n="status.sub">Deneb already runs real production sites. We're finishing validation before opening the installer to everyone.</p>
+      <ol class="timeline">
+        <li class="done"><b data-i18n="t.1.t">Core panel</b><span data-i18n="t.1.d">Sites, databases, SSL, DNS, files, SFTP, cron, users.</span></li>
+        <li class="done"><b data-i18n="t.2.t">Production deployments</b><span data-i18n="t.2.d">Git releases, Laravel and Next.js, encrypted backups.</span></li>
+        <li class="now"><b data-i18n="t.3.t">Public release</b><span data-i18n="t.3.d">One-line installer for Ubuntu 22.04, 24.04 and 26.04, docs and open source code.</span></li>
+      </ol>
+    </section>
+
+    <section class="cta">
+      <h2 data-i18n="cta.title">Be the first to install it</h2>
+      <p data-i18n="cta.sub">Leave your email and we'll let you know when Deneb is ready.</p>
+      <a class="btn" href="#top" data-i18n="cta.button">Join the launch list</a>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>© <span id="year">2026</span> Deneb</span>
+    <span data-i18n="foot.made">Made in Uruguay · Free and open source</span>
+  </footer>
+
+  <script src="/assets/app.js" defer></script>
+</body>
+</html>
