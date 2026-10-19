@@ -1,7 +1,6 @@
 # Deneb — landing page
 
-Página de presentación de [Deneb](https://github.com/pablitouy/Zenith), el panel de
-control para VPS. Es HTML, CSS y JavaScript estáticos, más un `subscribe.php` que
+Página de presentación de Deneb, el panel de control para VPS. Es HTML, CSS y JavaScript estáticos, más un `subscribe.php` que
 guarda la lista de interesados en el propio servidor. No hay build ni dependencias.
 
 ```text
