@@ -51,6 +51,8 @@
     'cta.sub': 'Dejá tu email y te avisamos cuando Deneb esté listo.',
     'cta.button': 'Sumarme a la lista',
     'foot.made': 'Hecho en Uruguay · Gratis y open source',
+    'foot.contact': 'Contacto',
+    'foot.security': 'Reportar un problema de seguridad',
   };
   const messages = {
     en: { ok: 'Thanks! We\'ll email you when Deneb launches.', invalid: 'Please enter a valid email address.', error: 'Something went wrong. Please try again later.' },

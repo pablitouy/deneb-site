@@ -41,9 +41,15 @@ php -S localhost:8080 -t public
 
 Abrir <http://localhost:8080>. El formulario funciona igual y escribe en `data/`.
 
+## Dominio y correo
+
+- Dominio: `denebpanel.com` (DNS en Cloudflare). La página declara
+  `https://denebpanel.com/` como URL canónica y usa `public/og-image.png` (1200×630)
+  como vista previa al compartir.
+- Contacto en el pie: `hola@denebpanel.com` y `security@denebpanel.com`, recibidos con
+  Cloudflare Email Routing (sólo recepción).
+
 ## Pendiente
 
-- Dominio definitivo (por ejemplo `deneb.uy` o `denebpanel.com`).
 - Capturas reales del panel en lugar de la maqueta HTML.
 - Link al repositorio público y botón de instalación cuando se libere el código.
-- Un email de contacto para bajas y consultas.
