@@ -21,11 +21,12 @@ deneb-site/
    `/var/www/<dominio>/public`.
 2. Subir el contenido de `public/` a `/site/public` por SFTP (o con el File Manager).
 3. Emitir el certificado SSL desde el panel.
-4. Crear la carpeta de datos una vez, como root. `/var/www/<dominio>` pertenece a root
-   (lo exige el encierro de SFTP), así que PHP no puede crearla solo:
+4. Crear la carpeta de datos una vez. PHP no puede escribir en `/var/www/<dominio>`, así
+   que hay que crearla con el mismo dueño y grupo que `public` (panel y grupo PHP del
+   sitio) y permisos `2770`, como las demás carpetas del sitio:
    ```bash
    d=/var/www/<dominio>
-   sudo install -d -o "$(sudo stat -c %U $d/public)" -g "$(sudo stat -c %G $d/public)" -m 0700 $d/data
+   sudo install -d -o "$(sudo stat -c %U $d/public)" -g "$(sudo stat -c %G $d/public)" -m 2770 $d/data
    ```
 5. Probar el formulario. Si responde "Algo salió mal", mirar el error log de Nginx del
    sitio (`/var/log/nginx/<dominio>.error.log`).
