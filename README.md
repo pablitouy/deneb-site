@@ -25,7 +25,7 @@ deneb-site/
    (lo exige el encierro de SFTP), así que PHP no puede crearla solo:
    ```bash
    d=/var/www/<dominio>
-   sudo install -d -o "$(stat -c %U $d/public)" -g "$(stat -c %G $d/public)" -m 0700 $d/data
+   sudo install -d -o "$(sudo stat -c %U $d/public)" -g "$(sudo stat -c %G $d/public)" -m 0700 $d/data
    ```
 5. Probar el formulario. Si responde "Algo salió mal", mirar el error log de Nginx del
    sitio (`/var/log/nginx/<dominio>.error.log`).
